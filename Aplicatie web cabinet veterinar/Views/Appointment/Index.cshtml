@@ -1,0 +1,15 @@
+﻿@model List<Aplicatie_web_cabinet_veterinar.Models.ApplicationModels.AppointmentModel>
+
+
+
+<h2>Programari</h2>
+
+@Html.ActionLink("Adauga programare", "AddEdit", "Appointment", null, new { @class="btn btn-primary"})
+@foreach (var appointment in Model)
+{
+	<div>
+		<div>
+			@Html.ActionLink("Vizualizeaza programarea", "Show", "Appointment", new { id = appointment.Id }, null)
+		</div>
+	</div>
+}

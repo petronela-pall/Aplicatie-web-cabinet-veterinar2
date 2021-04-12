@@ -1,0 +1,25 @@
+﻿@model List<Aplicatie_web_cabinet_veterinar.Models.ApplicationModels.ServiceModel>
+
+
+
+<h2>Lista servicilor oferite</h2>
+@*@if(admin || manager)*@
+	@Html.ActionLink("Adauga un serviciu", "AddEdit", "Service", null, new { @class = "btn btn-primary" })
+
+@foreach (var service in Model)
+{
+	<div>
+			<div>
+				Nume: @Html.ActionLink(service.Name, "Show", "Service", new { id = service.Id }, null)
+			</div>
+			<div>
+				Categorie: @service.CategoryName
+			</div>
+			<div>
+				Pret: @service.Price
+			</div>
+	</div>
+	//Poate adaugam aici butoane de edit delete
+	<br />
+	<br />
+}
